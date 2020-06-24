@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--HERE JS libs-->
+<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+<!--HERE JS libs-->
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+ .dropdown {
+  position: absolute;
+  z-index: 99999;
+  list-style-type: none;
+  width: 360px;
+  border: rgb(15, 22, 33);
+  list-style: none;
+  top: 135px;
+}
+input{
+  z-index: 9999; font-size: 18px;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  color: #495057;position: absolute; top: 100px; left: 20px; 
+  width: 350px; height: 35px; padding: 5px; margin-left: 17px; 
+  margin-top: 7px; border: none;
+}
+ul{
+  list-style: none; background-color: white; padding: 0px;
+  margin-left: 29px;
+width: 360px;
+}
+li{
+  list-style-type: none;
+  height: 12px;
+  padding: 12px;
+  box-shadow: rgb(158, 202, 237) 0px 0px 4px;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  color: #495057;
+  }
+li:hover {
+  background-color: yellowgreen;
+}
+#list {
+  cursor: pointer;
+}
+.fa-search-custom {
+  position: absolute;
+  left: 375px;
+  top: 123px;
+  z-index: 99999;
+}
+</style>
+
+<title>Geocoding API Demo</title>
+</head>
+  <body>
+    <div style="height: 100vh;width: 100vw;" id="mapContainer" class="container-1">
+      <div style="position:absolute;z-index: 9999;margin-top: 100px;">
+        <input type="text" name="search" id="search" onkeydown="autosuggest(this.value)"
+            style="width: 300px;height: 30px;border-radius: 5px;border-color:white;">
+        <ul id="list"></ul>
+      </div>
+    </div>
+    <script>
+        var myApiKey = `CeuMZT93PcvsA_ih6KUyk9tk2wi9ePXKFMbwhgXgAUc`;
+        var platform = new H.service.Platform({
+            apikey: myApiKey
+        });
+        var defaultLayers = platform.createDefaultLayers();
+
+        //Step 2: initialize a map - this map is centered over Europe
+        var map = new H.Map(document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map, {
+            center: { lat: 50, lng: 5 },
+            zoom: 4,
+            pixelRatio: window.devicePixelRatio || 1
+        });
+        // add a resize listener to make sure that the map occupies the whole container
+        window.addEventListener('resize', () => map.getViewPort().resize());
+        //Step 3: make the map interactive
+        // MapEvents enables the event system
+        // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+        const autosuggest = (e) => {
+          console.log(e.metaKey,"metakey")
+          if(event.metaKey){
+            console.log(event.metaKey,"metakey inside")
+            return
+          }
+          let searchString = e.value
+
+          if (searchString != "") {
+            // fetch(
+            //   `https://autosuggest.search.hereapi.com/v1/autosuggest?apiKey=${myApiKey}&at=33.738045,73.084488&limit=5&resultType=city&q=${searchString}&lang=en-US`
+            // )
+            // .then(data => {return data.json()})
+            // .then(res => {console.log(res)});
+
+            const Url=`https://autosuggest.search.hereapi.com/v1/autosuggest?apiKey=${myApiKey}&at=33.738045,73.084488&limit=5&resultType=city&q=${searchString}&lang=en-US`;
+            $.ajax({
+              type: 'GET',
+              crossDomain: true,
+              dataType: 'jsonp',
+              url: Url,
+              success: function(jsondata){
+                console.log(jsondata);
+              }
+            });
+          }
+        };
+    </script>
+  </body>
+</html>

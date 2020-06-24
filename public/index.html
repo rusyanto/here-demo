@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Inventory x Location</title>
+  </head>
+  <body>
+    <h2 style="margin-bottom: 0;">Inventory x Location</h2>
+    <div class="form-group row justify-content-end">
+      <div class="col-4">
+        <label for="exampleFormControlSelect1" style="margin-bottom: 0;">Maintenance Location</label>
+        <select id="mnt-loc" class="form-control" id="exampleFormControlSelect1">
+          <option value="">-- None --</option>
+          <option value="bishan">Bishan Depot</option>
+          <option value="changi">Changi Depot</option>
+          <option value="galibatu">Gali Batu Depot</option>
+          <option value="kimchuan">Kim Chuan Depot</option>
+          <option value="sengkang">Sengkang Depot</option>
+          <option value="tuas">Tuas Depot</option>
+          <option value="ulupandan">Ulu Pandan Depot</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead class="table-success">
+        <tr>
+          <th scope="col">Part Number</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="text-right">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-toggle="collapse" data-target="#accordion1" class="clickable">
+          <td>6000808483</th>
+          <td>DORMAN 635-129 ENGINE TIMING COVER</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>1,354</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion1" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Bishan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-bishan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  552
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('bishan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Changi Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-changi"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  432
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('changi')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Ulu Pandan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-ulupandan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  370
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('ulupandan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion2" class="clickable">
+          <td>6001578398</th>
+          <td>CM SHOCK ABSORBER REAR, DAF SB220</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>2,107</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion2" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Gali Batu Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-galibatu"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  683
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('galibatu')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Kim Chuan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-kimchuan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  704
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('kimchuan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Sengkang Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-sengkang"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  720
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('sengkang')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion3" class="clickable">
+          <td>6001581019</th>
+          <td>WINDSHIELD GLASS-RR OR DROP RH</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>3,099</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion3" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Bishan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-bishan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  976
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('bishan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Gali Batu Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-galibatu"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  1,047
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('galibatu')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Sengkang Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-sengkang"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  1,076
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('sengkang')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion4" class="clickable">
+          <td>6001723340</th>
+          <td>LOCK ASSY DOOR R/L, FOR TOYOTA TAXI</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>2,922</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion4" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Changi Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-changi"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  903
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('changi')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Kim Chuan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-kimchuan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  990
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('kimchuan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Ulu Pandan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-ulupandan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  1,029
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('ulupandan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion5" class="clickable">
+          <td>6003778489</th>
+          <td>BRIAN CROWER VALVES INTAKE 37MM SUBARU</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>12,037</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion5" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Bishan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-bishan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  4,004
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('bishan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Changi Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-changi"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  4,320
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('changi')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Gali Batu Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-galibatu"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  3,713
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('galibatu')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion6" class="clickable">
+          <td>6004211308</th>
+          <td>48" STAINLESS STEEL RADIATOR COOLANT WATER HOSE KIT</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>33,962</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion6" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Kim Chuan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-kimchuan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  11,320
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('kimchuan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Sengkang Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-sengkang"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  10,031
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('sengkang')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Tuas Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-tuas"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  12,611
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('tuas')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion7" class="clickable">
+          <td>6008424452</th>
+          <td>SANTA FE CM - BEARING BRACKET & SHAFT</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>7,593</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion7" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Bishan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-bishan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  2,589
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('bishan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Tuas Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-tuas"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  2,312
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('tuas')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Ulu Pandan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-ulupandan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  2,692
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('ulupandan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion8" class="clickable">
+          <td>6906043040</th>
+          <td>BEDFORD FUEL PUMP COUPLING FLANGE</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>1,355</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion8" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Changi Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-changi"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  439
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('changi')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Kim Chuan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-kimchuan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  398
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('kimchuan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Sengkang Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-sengkang"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  518
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('sengkang')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion9" class="clickable">
+          <td>7294121000</th>
+          <td>WATER PIPE 1.2M 3.3CM/3.5CM DIAMETER</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>24,383</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion9" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Changi Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-changi"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  8,083
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('changi')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Gali Batu Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-galibatu"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  7,984
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('galibatu')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Tuas Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-tuas"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  8,316
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('tuas')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#accordion10" class="clickable">
+          <td>7332121010</th>
+          <td>GLASS RUN ASSY-RR DR WDW RH D300</td>
+          <td class="text-right"><i class="fas fa-warehouse text-icon"></i>2,355</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="hidden-row">
+            <div id="accordion10" class="collapse container accordion-row">
+              <div class="row location-row">
+                <div class="col-sm">
+                  Kim Chuan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-kimchuan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  753
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('kimchuan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Tuas Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-tuas"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  853
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('tuas')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+              <div class="row location-row">
+                <div class="col-sm">
+                  Ulu Pandan Depot
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-ruler text-icon"></i>
+                  <span class="dist-ulupandan"></span>
+                </div>
+                <div class="col-sm text-right">
+                  <i class="fas fa-warehouse text-icon"></i>
+                  749
+                </div>
+                <div class="col-sm text-right">
+                  <a href="javascript:openMap('ulupandan')"><i class="fas fa-map-marked-alt text-icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0d6c6cbe13.js" crossorigin="anonymous"></script>
+
+    <!-- HERE maps -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

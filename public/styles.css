@@ -1,0 +1,19 @@
+body {
+  padding: 20px;
+}
+
+.hidden-row {
+  padding: 0 !important;
+}
+
+.accordion-row {
+  padding: 8px 0;
+}
+
+.location-row {
+  padding: 4px 0;
+}
+
+.text-icon {
+  padding-right: 6px;
+}
